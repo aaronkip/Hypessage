@@ -19,11 +19,6 @@ class _MyAppState extends State<MyApp> {
   FirebaseRepository _repository = FirebaseRepository();
   @override
   Widget build(BuildContext context) {
-    ///The following line signs out the user when the application is started..
-    /// Remove it during live implementation
-
-    _repository.signOut();
-
     return GetMaterialApp(
       title: 'Hypessage',
       debugShowCheckedModeBanner: false,
