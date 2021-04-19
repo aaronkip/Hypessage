@@ -86,14 +86,54 @@ class _ChatListContainerState extends State<ChatListContainer> {
       child: ListView.builder(
         padding: EdgeInsets.all(10),
         itemCount: 2,
-        itemBuilder: (context, index){
-          return CustomTile();
+        itemBuilder: (context, index) {
+          return CustomTile(
+            mini: false,
+            onTap: () {},
+            title: Text(
+              'Aaron Rono',
+              style: TextStyle(
+                  color: Colors.white, fontFamily: "Arial", fontSize: 19),
+            ),
+            subtitle: Text(
+              'Hello',
+              style: TextStyle(
+                color: UniversalVariables.greyColor,
+                fontSize: 14,
+              ),
+            ),
+            leading: Container(
+              constraints: BoxConstraints(maxHeight: 60, maxWidth: 60),
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    maxRadius: 30,
+                    backgroundColor: Colors.grey,
+                    backgroundImage: NetworkImage(
+                        'https://avatars.githubusercontent.com/u/42744930?v=4'),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                      height: 10,
+                      width: 10,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: UniversalVariables.onlineDotColor,
+                        border: Border.all(
+                            color: UniversalVariables.blackColor, width: 2),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
         },
       ),
     );
   }
 }
-
 
 class UserCircle extends StatelessWidget {
   final String text;
