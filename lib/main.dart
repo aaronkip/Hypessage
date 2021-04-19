@@ -22,6 +22,8 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: 'Hypessage',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+          primaryColor: Color(0xff017f04), primaryColorDark: Color(0xff017f04)),
       home: Scaffold(
         body: FutureBuilder(
           future: _repository.getCurrentUser(),

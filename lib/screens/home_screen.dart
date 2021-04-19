@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hypessage/resources/firebase_repository.dart';
+import 'package:hypessage/screens/pageviews/chat_list_screen.dart';
 import 'package:hypessage/utils/universal_variables.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,12 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: UniversalVariables.blackColor,
       body: PageView(
         children: [
-          Center(
-            child: Text(
-              'Chat List Screen',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
+          Container(child: ChatListScreen()),
           Center(
             child: Text(
               'Call Logs',
@@ -70,21 +66,42 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: (_page == 0)
                         ? UniversalVariables.lightBlueColor
                         : UniversalVariables.greyColor),
-                label: 'Chats',
+                title: Text(
+                  'Chats',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: (_page == 0)
+                          ? UniversalVariables.lightBlueColor
+                          : UniversalVariables.greyColor),
+                ),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.call,
                     color: (_page == 1)
                         ? UniversalVariables.lightBlueColor
                         : UniversalVariables.greyColor),
-                label: 'Calls',
+                title: Text(
+                  'Calls',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: (_page == 1)
+                          ? UniversalVariables.lightBlueColor
+                          : UniversalVariables.greyColor),
+                ),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.contact_phone,
                     color: (_page == 2)
                         ? UniversalVariables.lightBlueColor
                         : UniversalVariables.greyColor),
-                label: 'Contacts',
+                title: Text(
+                  'Contacts',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: (_page == 2)
+                          ? UniversalVariables.lightBlueColor
+                          : UniversalVariables.greyColor),
+                ),
               ),
             ],
             onTap: navigationTapped,
