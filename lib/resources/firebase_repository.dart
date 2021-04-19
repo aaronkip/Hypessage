@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hypessage/resources/firebase_methods.dart';
 
+import 'package:hypessage/models/user.dart';
+
 class FirebaseRepository {
   FirebaseMethods _firebaseMethods = FirebaseMethods();
 
@@ -15,4 +17,6 @@ class FirebaseRepository {
       _firebaseMethods.addDataToDb(user);
 
   Future<void> signOut() => _firebaseMethods.signOut();
+
+  Future<List<User>> fetchAllUsers(FirebaseUser user) => _firebaseMethods.fetchAllUsers(user);
 }

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hypessage/resources/firebase_repository.dart';
 import 'package:hypessage/screens/home_screen.dart';
 import 'package:hypessage/screens/login_screen.dart';
+import 'package:hypessage/screens/search_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,8 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: 'Hypessage',
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {'/search_screen': (context) => SearchScreen()},
       theme: ThemeData.dark().copyWith(
           primaryColor: Color(0xff017f04), primaryColorDark: Color(0xff017f04)),
       home: Scaffold(

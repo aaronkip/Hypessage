@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hypessage/resources/firebase_repository.dart';
 import 'package:hypessage/utils/universal_variables.dart';
 import 'package:hypessage/utils/utils.dart';
@@ -46,7 +47,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Icons.search,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Get.to(SearchScreen());
+          },
         ),
         IconButton(
           icon: Icon(
