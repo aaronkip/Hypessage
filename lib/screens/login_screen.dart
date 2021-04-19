@@ -23,7 +23,31 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: UniversalVariables.blackColor,
       body: Stack(children: [
         Center(
-          child: loginButton(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Shimmer.fromColors(
+                period: const Duration(seconds: 3),
+                baseColor: Colors.grey,
+                highlightColor: UniversalVariables.gradientColorEnd,
+                child: Column(children: [
+                  Image.asset('assets/images/logo.png'),
+                  Text(
+                    'HYPESSAGE',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              loginButton(),
+            ],
+          ),
         ),
         isLoginPressed
             ? Center(child: CircularProgressIndicator())
@@ -33,21 +57,22 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget loginButton() {
-    return Shimmer.fromColors(
-      baseColor: Colors.white,
-      highlightColor: UniversalVariables.senderColor,
-      child: FlatButton(
-        padding: EdgeInsets.all(35),
-        child: Text(
-          'Login',
-          style: TextStyle(
-            fontSize: 35,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 1.2,
-          ),
+    return MaterialButton(
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      color: Colors.grey,
+      textColor: Colors.white,
+      highlightColor: UniversalVariables.gradientColorEnd,
+      padding: EdgeInsets.all(10),
+      child: Text(
+        'Login',
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 1.2,
         ),
-        onPressed: () => performLogin(),
       ),
+      onPressed: () => performLogin(),
     );
   }
 

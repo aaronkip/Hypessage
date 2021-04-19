@@ -9,7 +9,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-
   FirebaseRepository _repository = FirebaseRepository();
 
   List<User> userList;
@@ -21,18 +20,17 @@ class _SearchScreenState extends State<SearchScreen> {
     // TODO: implement initState
     super.initState();
 
-    _repository.getCurrentUser().then((FirebaseUser user){
-    _repository.fetchAllUsers(user).then((List<User> list){
-      setState((){
-        userList = list;
-      }      );
-    });
-
+    _repository.getCurrentUser().then((FirebaseUser user) {
+      _repository.fetchAllUsers(user).then((List<User> list) {
+        setState(() {
+          userList = list;
+        });
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }

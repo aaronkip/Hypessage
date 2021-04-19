@@ -15,6 +15,8 @@ class UniversalVariables {
   static final Color senderColor = Color(0xff2b343b);
   static final Color receiverColor = Color(0xff1e2225);
 
+  static final Color shimmerColor = Color(0xff585656);
+
   static final Gradient fabGradient = LinearGradient(
       colors: [gradientColorStart, gradientColorEnd],
       begin: Alignment.topLeft,

@@ -6,6 +6,8 @@ import 'package:hypessage/utils/utils.dart';
 import 'package:hypessage/widgets/appbar.dart';
 import 'package:hypessage/widgets/custom_tile.dart';
 
+import '../search_screen.dart';
+
 class ChatListScreen extends StatefulWidget {
   @override
   _ChatListScreenState createState() => _ChatListScreenState();
