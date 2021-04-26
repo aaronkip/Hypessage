@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hypessage/models/user.dart';
 import 'package:hypessage/resources/firebase_repository.dart';
+import 'package:hypessage/utils/universal_variables.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -29,8 +30,13 @@ class _SearchScreenState extends State<SearchScreen> {
     });
   }
 
+  searchAppBar(BuildContext context) {}
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: UniversalVariables.blackColor,
+      appBar: searchAppBar(context),
+    );
   }
 }

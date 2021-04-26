@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hypessage/resources/firebase_repository.dart';
 import 'package:hypessage/utils/universal_variables.dart';
+import 'package:loading_animations/loading_animations.dart';
 import 'package:shimmer/shimmer.dart';
 
 import 'home_screen.dart';
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(children: [
                   Image.asset('assets/images/logo.png'),
                   Text(
-                    'HYPESSAGE',
+                    'SARGE',
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w900,
@@ -50,7 +51,11 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         isLoginPressed
-            ? Center(child: CircularProgressIndicator())
+            ? Center(
+                child: LoadingFlipping.circle(
+                borderColor: Colors.grey,
+                duration: Duration(milliseconds: 800),
+              ))
             : Container(),
       ]),
     );
@@ -59,11 +64,11 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget loginButton() {
     return MaterialButton(
       elevation: 5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      color: Colors.grey,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      color: Colors.deepOrange,
       textColor: Colors.white,
       highlightColor: UniversalVariables.gradientColorEnd,
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Text(
         'Login',
         style: TextStyle(

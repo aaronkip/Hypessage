@@ -17,7 +17,7 @@ final FirebaseRepository _repository = FirebaseRepository();
 
 class _ChatListScreenState extends State<ChatListScreen> {
   String currentUserId;
-  String initials = "";
+  String initials = "RK";
 
   @override
   void initState() {
@@ -90,18 +90,18 @@ class _ChatListContainerState extends State<ChatListContainer> {
     return Container(
       child: ListView.builder(
         padding: EdgeInsets.all(10),
-        itemCount: 2,
+        itemCount: 1,
         itemBuilder: (context, index) {
           return CustomTile(
             mini: false,
             onTap: () {},
             title: Text(
-              'Aaron Rono',
+              'Ron K',
               style: TextStyle(
                   color: Colors.white, fontFamily: "Arial", fontSize: 19),
             ),
             subtitle: Text(
-              'Hello',
+              'Hello, app testing...',
               style: TextStyle(
                 color: UniversalVariables.greyColor,
                 fontSize: 14,
